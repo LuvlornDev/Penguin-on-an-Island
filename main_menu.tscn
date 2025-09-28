@@ -1,0 +1,237 @@
+[gd_scene load_steps=18 format=3 uid="uid://b6ibujx4fcji6"]
+
+[ext_resource type="Script" uid="uid://6urhdpij5v38" path="res://main_menu.gd" id="1_06t4h"]
+[ext_resource type="Texture2D" uid="uid://lhley5rsekbw" path="res://beach.jpg" id="2_0o4t1"]
+[ext_resource type="Texture2D" uid="uid://dm1ey5sxamlx3" path="res://play.jpg" id="2_glbon"]
+[ext_resource type="Texture2D" uid="uid://dvnja0k87h85n" path="res://island.png" id="2_nlkkf"]
+[ext_resource type="FontFile" uid="uid://h085hkbvi0lx" path="res://BoldPixels.ttf" id="3_qe12f"]
+[ext_resource type="Texture2D" uid="uid://ce3h0ss1lti3o" path="res://cred.jpg" id="4_qe12f"]
+[ext_resource type="Texture2D" uid="uid://dekvu86humj23" path="res://playcl.jpg" id="5_0k4wn"]
+[ext_resource type="Texture2D" uid="uid://8xfyv5cf2rp4" path="res://Captura de pantalla 2025-09-28 005037.png" id="5_8qtwp"]
+[ext_resource type="Texture2D" uid="uid://d7osr41k5lkq" path="res://credcl.jpg" id="9_iotk1"]
+[ext_resource type="Texture2D" uid="uid://q5w4uegjb2dq" path="res://quitcl.jpg" id="11_w44g7"]
+
+[sub_resource type="Animation" id="Animation_qe12f"]
+resource_name = "fade_in"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CanvasLayer/FadeRect:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 1), Color(0, 0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_8qtwp"]
+resource_name = "fade_out"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CanvasLayer/FadeRect:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 0), Color(0, 0, 0, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_dy7ct"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CanvasLayer/FadeRect:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0, 0, 0, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CanvasLayer/StartText:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("CanvasLayer/ButtonContainer:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_0o4t1"]
+resource_name = "fade_out_text"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CanvasLayer/StartText:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_0k4wn"]
+resource_name = "fade_in_buttons"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CanvasLayer/ButtonContainer:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_j5v2v"]
+resource_name = "fade_out_buttons"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CanvasLayer/ButtonContainer:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_0o4t1"]
+_data = {
+&"RESET": SubResource("Animation_dy7ct"),
+&"fade_in": SubResource("Animation_qe12f"),
+&"fade_in_buttons": SubResource("Animation_0k4wn"),
+&"fade_out": SubResource("Animation_8qtwp"),
+&"fade_out_buttons": SubResource("Animation_j5v2v"),
+&"fade_out_text": SubResource("Animation_0o4t1")
+}
+
+[node name="MainMenu" type="Node2D"]
+script = ExtResource("1_06t4h")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Background" type="TextureRect" parent="CanvasLayer"]
+modulate = Color(1, 1, 1, 0.5803922)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_0o4t1")
+
+[node name="GameLogo" type="TextureRect" parent="CanvasLayer"]
+offset_left = 387.0
+offset_top = 17.0
+offset_right = 2307.0
+offset_bottom = 1097.0
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("2_nlkkf")
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="CanvasLayer"]
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -585.94995
+offset_top = -54.525024
+offset_right = -12.949951
+offset_bottom = -7.5250244
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_fonts/font = ExtResource("3_qe12f")
+theme_override_font_sizes/font_size = 35
+text = "Copyright 2025 spinning chip Games"
+
+[node name="StartText" type="Label" parent="CanvasLayer"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -384.0
+offset_top = 60.0
+offset_right = 384.0
+offset_bottom = 136.00018
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("3_qe12f")
+theme_override_font_sizes/font_size = 95
+text = "Press any key to begin!"
+
+[node name="FadeRect" type="ColorRect" parent="CanvasLayer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="ButtonContainer" type="VBoxContainer" parent="CanvasLayer"]
+modulate = Color(1, 1, 1, 0)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -260.0
+offset_top = 132.995
+offset_right = 378.0
+offset_bottom = 756.9949
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.8, 0.8)
+
+[node name="PlayButton" type="TextureButton" parent="CanvasLayer/ButtonContainer"]
+layout_mode = 2
+texture_normal = ExtResource("2_glbon")
+texture_pressed = ExtResource("5_0k4wn")
+
+[node name="CreditsButton" type="TextureButton" parent="CanvasLayer/ButtonContainer"]
+layout_mode = 2
+texture_normal = ExtResource("4_qe12f")
+texture_pressed = ExtResource("9_iotk1")
+
+[node name="QuitButton" type="TextureButton" parent="CanvasLayer/ButtonContainer"]
+layout_mode = 2
+texture_normal = ExtResource("5_8qtwp")
+texture_pressed = ExtResource("11_w44g7")
+
+[node name="BGMusic" type="AudioStreamPlayer" parent="."]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_0o4t1")
+}

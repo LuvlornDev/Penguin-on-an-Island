@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://sp3bhe7vabjh"]
+
+[ext_resource type="Script" uid="uid://dwi6u0nwoy5o2" path="res://enemy/enemy_2.gd" id="1_jfe6r"]
+[ext_resource type="Texture2D" uid="uid://vws5rjmpt01y" path="res://enemy/maiuwu-removebg-preview.png" id="2_jugo2"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jugo2"]
+size = Vector2(33, 218)
+
+[node name="pp" type="CharacterBody2D" groups=["bad"]]
+position = Vector2(0, 2)
+script = ExtResource("1_jfe6r")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-5, -4.9999695)
+scale = Vector2(0.4762419, 0.49443412)
+texture = ExtResource("2_jugo2")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-2, -4)
+shape = SubResource("RectangleShape2D_jugo2")
