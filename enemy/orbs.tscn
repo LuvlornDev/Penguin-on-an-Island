@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://w8txjbedf2j4"]
+
+[ext_resource type="Script" uid="uid://dq0al0ty4qexf" path="res://enemy/orbs.gd" id="1_f651u"]
+[ext_resource type="Texture2D" uid="uid://da3jkk1lwb6b2" path="res://enemy/pixil-frame-0 (10).png" id="2_geu74"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_5afwd"]
+radius = 8.01561
+
+[node name="Area2D" type="Area2D" groups=["bad"]]
+script = ExtResource("1_f651u")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+texture = ExtResource("2_geu74")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." groups=["bad"]]
+position = Vector2(0, 0.5)
+shape = SubResource("CircleShape2D_5afwd")
