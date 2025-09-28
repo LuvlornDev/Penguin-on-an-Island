@@ -1,0 +1,14 @@
+AudioStreamPlayer2D
+ColorRect
+Label
+CanvasLayer
+AudioStreamPlayer
+AnimationPlayer
+CheckButton
+HSlider
+VBoxContainer
+TextureRect
+TextureButton
+Button
+Node2D
+Control
